@@ -36,14 +36,10 @@
               <td><%= i + 1%></td>
               <td><strong><%= tasks[i].Direccion %></strong></td>
               <td>
-                <a
-                  class="<%= tasks[i].status ? 'btn btn-success' : 'btn btn-dark'%>"
-                  href="/turn/<%= tasks[i]._id %>">Done</a>
-                <a href="/delete/<%= tasks[i]._id %>"
-                  class="btn btn-danger">
+                <a href="/delete/<%= tasks[i]._id %>" class="btn btn-danger">
                   Delete
                 </a>
-                <a href="/edit/<%= tasks[i]._id %>" class="btn btn-info">
+               <a href="/edit/<%= tasks[i]._id %>" class="btn btn-info">
                   Edit
                 </a>
               </td>
