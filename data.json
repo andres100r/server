@@ -1,0 +1,22 @@
+{
+    "courses": [
+      {
+        "id": 1,
+        "direccion": "arriba"
+       
+      },
+      {
+        "id": 2,
+        "direccion": "abajo"
+       
+      }, {
+        "id": 3,
+        "direccion": "derecha"
+       
+      }, {
+        "id": 4,
+        "direccion": "izquierda"
+       
+      }
+    ]
+  }
