@@ -9,15 +9,11 @@
         <div class="card-body">
           <form action="/add" method="post">
             <div class="form-group">
-              <input class="form-control" type="text" name="title" placeholder="Title">
+              <input class="form-control" type="text" name="Direccion" placeholder="Direccion">
             </div>
-            <div class="form-group">
-              <textarea class="form-control" name="description" cols="80"
-                placeholder="Add a Description"
-                ></textarea>
-            </div>
+            
             <button class="btn btn-primary" type="submit">
-              Add
+              Agregar
             </button>
           </form>
         </div>
@@ -30,8 +26,7 @@
         <thead>
           <tr>
             <th>N°</th>
-            <th>Title</th>
-            <th>Description</th>
+            <th>Direccion</th>
             <th>Operations</th>
           </tr>
         </thead>
@@ -39,8 +34,7 @@
           <% for(var i=0; i < tasks.length; i++) { %>
             <tr>
               <td><%= i + 1%></td>
-              <td><strong><%= tasks[i].title %></strong></td>
-              <td><%= tasks[i].description %></td>
+              <td><strong><%= tasks[i].Direccion %></strong></td>
               <td>
                 <a
                   class="<%= tasks[i].status ? 'btn btn-success' : 'btn btn-dark'%>"

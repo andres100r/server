@@ -2,8 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const TaskSchema = Schema({
-  title: String,
-  description: String,
+  Direccion: String,
   status: {
     type: Boolean,
     default: false
