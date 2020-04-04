@@ -2,19 +2,7 @@ const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
-const express_graphql = require('express-graphql');
-const { buildSchema } = require('graphql');
 const app = express();
-const schema = buildSchema(`
-  type Query {
-    message: String
-  }
-  
-  `);
-const root = {
-  message: () => "hello mundo"
-}
-
 
 
 
@@ -37,13 +25,33 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}))
 // rutas
 app.use('/', indexRoutes);
-app.use('/graphql', express_graphql({
-  schema: schema,
-  rootValue: root,
-  graphiql: true
-}));
 
 
 app.listen(app.get('port'), () => {
   console.log(`server on port ${app.get('port')}`);
 });
+
+
+
+
+
+var express_graphql = require('express-graphql');
+var { buildSchema } = require('graphql');
+// GraphQL schema
+var schema = buildSchema(`
+    type Query {
+        message: String
+    }
+`);
+// Root resolver
+var root = {
+    message: () => 'Hello World!'
+};
+// Create an express server and a GraphQL endpoint
+
+app.use('/graphql', express_graphql({
+    schema: schema,
+    rootValue: root,
+    graphiql: true
+}));
+app.listen(4000, () => console.log('Express GraphQL Server Now Running On localhost:4000/graphql'));
