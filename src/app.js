@@ -8,9 +8,10 @@ const app = express();
 
 
 // conexion a mongoDB
-mongoose.connect('mongodb://localhost/arquitecrutadb')
+mongoose.connect('mongodb://localhost/arquitectuaadb')
   .then(db => console.log('MongoDB conectado'))
   .catch(err => console.log(err));
+
 
 // imprtar Rutas
 const indexRoutes = require('./routes/index');
@@ -32,6 +33,7 @@ app.listen(app.get('port'), () => {
 });
 
 
+//GRAPHQL
 
 
 
@@ -47,11 +49,10 @@ var schema = buildSchema(`
 var root = {
     message: () => 'Hello World!'
 };
-// Create an express server and a GraphQL endpoint
 
+// Create an express server and a GraphQL endpoint
 app.use('/graphql', express_graphql({
     schema: schema,
     rootValue: root,
     graphiql: true
 }));
-app.listen(4000, () => console.log('Express GraphQL Server Now Running On localhost:4000/graphql'));

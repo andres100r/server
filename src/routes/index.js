@@ -15,20 +15,6 @@ router.post('/add', async (req, res, next) => {
   res.redirect('/');
 });
 
-router.get('/turn/:id', async (req, res, next) => {
-  let { id } = req.params;
-  const task = await Task.findById(id);
-  task.status = !task.status;
-  await task.save();
-  res.redirect('/');
-});
-
-
-router.get('/edit/:id', async (req, res, next) => {
-  const task = await Task.findById(req.params.id);
-  console.log(task)
-  res.render('edit', { task });
-});
 
 router.get('/delete/:id', async (req, res, next) => {
   let { id } = req.params;

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const TaskSchema = Schema({
+const direccionSchema = Schema({
   Direccion: String,
   status: {
     type: Boolean,
@@ -9,4 +9,4 @@ const TaskSchema = Schema({
   }
 });
 
-module.exports = mongoose.model('tasks', TaskSchema);
+module.exports = mongoose.model('direccion5', direccionSchema);
