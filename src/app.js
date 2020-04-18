@@ -8,7 +8,7 @@ const app = express();
 
 
 // conexion a mongoDB
-mongoose.connect('mongodb://localhost/arquitectuaadb')
+mongoose.connect('mongodb+srv://hammer:hammer123@cluster0-8ir3i.mongodb.net/test?retryWrites=true&w=majority')
   .then(db => console.log('MongoDB conectado'))
   .catch(err => console.log(err));
 

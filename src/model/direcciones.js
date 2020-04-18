@@ -9,4 +9,4 @@ const direccionSchema = Schema({
   }
 });
 
-module.exports = mongoose.model('direccion5', direccionSchema);
+module.exports = mongoose.model('direcciones', direccionSchema);
